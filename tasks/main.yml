@@ -1,2 +1,42 @@
 ---
-# tasks file for ansi-kvm
+- name: install cpu-checker
+  apt:
+    name: cpu-checker
+    state: present 
+    update_cache: true 
+
+- name: Check if CPU supports virtualization
+  command: kvm-ok
+  ignore_errors: true
+  register: kvm_ok
+
+- name: Fail if CPU does not support virtualization
+  fail:
+    msg: "CPU does not support virtualization."
+  when: kvm_ok.rc != 0
+
+- name: Install KVM and related packages
+  apt:
+    name:
+      - qemu
+      - qemu-kvm
+      - libvirt-bin
+      - bridge-utils
+      - virt-manager
+      - virtinst
+      - libvirt-daemon-system 
+      - libvirt-clients 
+    state: present
+
+- name: Ensure libvirtd service is enabled and started
+  service:
+    name: libvirtd
+    enabled: true
+    state: started
+
+- name: Add current user to libvirt and kvm groups
+  user:
+    name: "{{ ansible_user }}"
+    groups: libvirt,kvm
+    append: true
+
