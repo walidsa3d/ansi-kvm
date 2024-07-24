@@ -1,5 +1,5 @@
 galaxy_info:
-  role_name: ansikvm
+  role_name: kvm
   author: walidsa3d
   description: Install kvm on ubuntu
   license: MIT

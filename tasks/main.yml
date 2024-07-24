@@ -1,5 +1,5 @@
 ---
-- name: install cpu-checker
+- name: Install cpu-checker
   apt:
     name: cpu-checker
     state: present 
