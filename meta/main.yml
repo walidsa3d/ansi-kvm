@@ -5,7 +5,10 @@ galaxy_info:
   license: MIT
   min_ansible_version: "2.1"
   platforms:
-  - name: Fedora
+  - name: Ubuntu
     versions:
     - all
-  galaxy_tags: []
+  galaxy_tags:
+    - kvm
+    - qemu 
+    - virtualization
