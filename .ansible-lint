@@ -1,0 +1,4 @@
+warn_list:
+  - experimental  # Shows from experimental rules not enabled by default
+exclude_paths:
+  - test_playbook.yml  # Exclude specific files or directories
