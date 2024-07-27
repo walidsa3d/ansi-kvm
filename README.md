@@ -1,7 +1,7 @@
 # Ansible-KVM
 An Ansible role to install KVM on Ubuntu/Debian
 ![Ansible Role](https://img.shields.io/ansible/role/d/walidsa3d/kvm)
-![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/walidsa3d/kvm/main.yml)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/walidsa3d/ansible-kvm/main.yml)
 
 Install
 ------------
