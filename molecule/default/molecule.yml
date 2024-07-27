@@ -1,0 +1,24 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: vagrant
+
+platforms:
+  - name: ubuntu
+    box: ubuntu/jammy64
+    memory: 1024
+    cpus: 2
+provisioner:
+  name: ansible
+verifier:
+  name: testinfra
+scenario:
+  name: default
+  create_sequence:
+    - create
+  check_sequence:
+    - destroy
+    - dependency
+    - create
+
