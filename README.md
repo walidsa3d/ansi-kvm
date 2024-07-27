@@ -28,7 +28,7 @@ Example Playbook
 ```yaml
 - hosts: all
   roles:
-    - walidsa3.kvm
+    - walidsa3d.kvm
 ```
 License
 -------
